@@ -20,6 +20,7 @@ public class Register {
     private JLabel Estado;
     private JTextField cilindraje;
     private JTextField marca;
+    private JButton regresarButton;
 
     String url="jdbc:mysql://localhost:3306/AMT";
     String user="root";
@@ -70,6 +71,18 @@ public class Register {
                 combustible.setText(null);
                 color.setText(null);
                 propietario.setText(null);
+            }
+        });
+        regresarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Selector().MainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setSize(500,350);
+                frame.setVisible(true);
+
+                ((JFrame)SwingUtilities.getWindowAncestor(regresarButton)).dispose();
             }
         });
     }

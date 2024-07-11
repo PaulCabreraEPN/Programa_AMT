@@ -23,5 +23,17 @@ public class Selector {
 
             }
         });
+        buscarUnVehículoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame();
+                frame.setContentPane(new Search().MainPanel);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setSize(400,650);
+                frame.setVisible(true);
+
+                ((JFrame)SwingUtilities.getWindowAncestor(registrarUnVehículoButton)).dispose();
+            }
+        });
     }
 }
